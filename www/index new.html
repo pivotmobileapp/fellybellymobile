@@ -168,63 +168,61 @@
 <script type="text/ons-template" id="home.html">
 <ons-navigator title="Navigator" var="kNavigator">
   <ons-page id="page-home" on-device-backbutton="exitKApp()" sliding-menu-ignore="true" >
+  
         
     <ons-toolbar>
       <div class="left">
-        <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button>        
-      </div>    
-	  
-	   <div id="navlinks" class="center white">
-		<ul>
-			<a onclick="showNews();">News &nbsp; </a>
-			<a > | &nbsp;  </a>
-			<a onclick="showOrders();"> My Orders</a>
+	  <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button> 
 		
+		<div id="navlinks" class="center white">
+		<ul>
+			<li><span class="trn" data-trn-key="my_points">My Points</span></li>
+			<li><a>|</a></li>
+			<li><a onclick="showOrders();">My Orders</a></li>
+						
 		</ul>
-	  </div>
-
+		</div>
+      </div>
+	  
+	  
     </ons-toolbar>
-
+	
     <div class="home-header">
          <img src="css/images/banner.png" alt="" title="">
     </div> 
        
     <div class="home-page wrapper center">       
-       <h4 class="trn" data-trn-key="enter_your_location">What are you craving?</h4>
+       <h4 class="trn" data-trn-key="enter_your_location">Drink your way to a healthier you!</h4>
        
        <section class="field-section">
-           <input id="men" value="" type="text" class="text-input text-input--underbar trn" placeholder="Enter Food Name"
-         style="display: block; width: 100%">
-		 <input id="s" value="" type="text" class="text-input text-input--underbar trn" ng-model="text" placeholder="Street Address, Area" data-trn-key="home_search_placeholder" 
+           
+		 <input id="s" value="" type="text" class="text-input text-input--underbar trn" ng-model="text" placeholder="Street Address,City" data-trn-key="home_search_placeholder" 
          style=" width: 100%">
 		 
        </section>
               
-    <div class="padtop25">
-	
-       <button class="button button--quiet pink" onclick="getCurrentLocation();">
+       <div class="padtop25">
+       <button class="button button--quiet green" onclick="getCurrentLocation();">
        <ons-icon icon="fa-location-arrow"></ons-icon>
          <span class="trn" data-trn-key="use_my_location">Use my current location</span>
        </button>       
        </div>
        
-  <button class="firstbutton" onclick="Localtion();">  &nbsp;&nbsp;  Search Food  &nbsp;&nbsp;<ons-icon icon="fa-chevron-right"></ons-icon></button>
-  <button class="secondbutton" data-trn-key="search_restaurant" onclick="kUz();"> &nbsp; Nearby FellyBelly &nbsp;  <ons-icon icon="fa-chevron-right"></ons-icon> </button>
-   
     
-    	
-	  
-	
-	   
-
+  <button class="button green-btn button--large" onclick="searchMerchant();" style="display:none">
+	      <span class="trn" data-trn-key="search_restaurant">Search Restaurant</span>    	      
+	      <div class="search-btn"><ons-icon icon="fa-chevron-right"></ons-icon></div>
+	   </button>
+	   <button class="button green-btn button--large" onclick="Localtion();">
+	      <span class="trn" data-trn-key="search_restaurant">Nerby FellyBelly</span>    	      
+	      <div class="search-btn"><ons-icon icon="fa-chevron-right"></ons-icon></div>
+	   </button>
+	  	   
+	   	  
     </div>  
-	
-	
-<div id="example-json" class="accordion-slider"></div>	
-	   
-<!--	<div class="bottombanner">
-	   	                
-    </div>-->
+	<div class="bottombanner">
+	  	                
+       </div>
 
     <div class="wrapper no-connection">
       <ons-icon icon="ion-wifi" id="ion-wifi"></ons-icon>
@@ -273,7 +271,7 @@
 				</div>
 			</ons-toolbar>
 
-			<iframe src="http://smarturl.it/livehelp" width="100%" height="100%"></iframe>
+			<iframe src="http://smarturl.it/fellybellylivehelp" width="100%" height="100%"></iframe>
 			
 		</ons-page>
 	</ons-navigator>
