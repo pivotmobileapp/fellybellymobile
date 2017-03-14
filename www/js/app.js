@@ -162,18 +162,18 @@ $( document ).on( "keyup", ".numeric_only", function() {
 ons.bootstrap();  
 ons.ready(function() {
 	dump('ready');
-$('#example-json').accordionSlider({
-			JSONSource: 'http://fellybellyapp.com/counter.php?callback=?',
-			width: 860, 
-			height: 400,
-			responsiveMode: 'custom',
-			autoplay: false,
-			mouseWheel:false,
-			breakpoints: {
-				700: {visiblePanels: 6},
-				500: {visiblePanels: 4}
-			}
-		});
+	$('#example-json').accordionSlider({
+		JSONSource: 'http://fellybellyapp.com/counter.php?callback=?',
+		width: 860, 
+		height: 400,
+		responsiveMode: 'custom',
+		autoplay: false,
+		mouseWheel:false,
+		breakpoints: {
+			700: {visiblePanels: 6},
+			500: {visiblePanels: 4}
+		}
+	});
 	//navigator.splashscreen.hide()	
 	$("#s").val( getStorage("search_address") );
 
@@ -249,7 +249,7 @@ function searchMerchant()
 {			
 
 	var s =$('#s').val(); 
- 	/*`console.log(merch_inf)`*/	
+	/*`console.log(merch_inf)`*/	
 	/*clear all storage*/
 	setStorage("search_address",s);   
 	removeStorage('merchant_id');
@@ -318,7 +318,9 @@ document.addEventListener("pageinit", function(e) {
 			translatePage();
 			$(".search_address_geo").attr("placeholder",  getTrans('Street Address,City,State','home_search_placeholder') );
 			break;
-
+		case 'listscolor':
+			listsMenu()
+			break;
 		case "page-enter-contact":  
 			translatePage();
 			$(".contact_phone").attr("placeholder", getTrans("Mobile Phone","mobile_number") );
@@ -1416,6 +1418,11 @@ function callAjax(action,params)
 
 						/*pts*/
 					case "getPTS":   
+
+						setStorage('1',data.details.available_points)
+						setStorage('2',data.details.total_expenses_points)
+						setStorage('3',data.details.points_expiring)
+								console.log(data.details);
 						$(".available_points").html( data.details.available_points );
 						$(".expenses_points").html( data.details.total_expenses_points );
 						$(".expired_points").html( data.details.points_expiring );
@@ -1772,7 +1779,7 @@ function callAjax(action,params)
 
 function setHome()
 {
-	
+
 	dump("setHome");
 	var options = {     	  		  
 		closeMenu:true,
@@ -1780,23 +1787,23 @@ function setHome()
 		callback:setHomeCallback
 	};	   	   	   
 	menu.setMainPage('home.html',options);
-	
+
 }
 
 function setHomeCallback()
 {	$('#example-json').accordionSlider({
-			JSONSource: 'http://fellybellyapp.com/counter.php?callback=?',
-			width: 860, 
-			height: 400,
-			responsiveMode: 'custom',
-			autoplay: false,
-			mouseWheel:false,
-			breakpoints: {
-				700: {visiblePanels: 6},
-				500: {visiblePanels: 4}
-			}
-		});
-	refreshConnection();
+	JSONSource: 'http://fellybellyapp.com/counter.php?callback=?',
+	width: 860, 
+	height: 400,
+	responsiveMode: 'custom',
+	autoplay: false,
+	mouseWheel:false,
+	breakpoints: {
+		700: {visiblePanels: 6},
+		500: {visiblePanels: 4}
+	}
+});
+ refreshConnection();
 }
 
 function displayRestaurantResults(data , target_id)
@@ -1818,7 +1825,7 @@ function displayRestaurantResults(data , target_id)
 		if(json_text){
 			for(i=0;i<dziuk.length;i++){
 				if(val.merchant_id==dziuk[i]){
-					
+
 					if(getStorage("br_rest")){
 
 						htm+='<ons-list-item modifier="tappable" class="list-item-container" onclick="loadRestaurantCategory('+val.merchant_id+');" >';
@@ -1959,7 +1966,7 @@ function displayRestaurantResults(data , target_id)
 								htm+='<p class="top10">'+val_offer+'</p>';
 							});
 						}
- 						htm+='<span class="notification '+val.tag_raw+' ">'+val.is_open+'</span>';
+						htm+='<span class="notification '+val.tag_raw+' ">'+val.is_open+'</span>';
 						htm+='</div>';
 
 						htm+='<ons-row>';
@@ -2150,6 +2157,7 @@ function cuisineResults(data)
 
 function menuCategoryResult(data)
 {
+	console.log(data);
 	$("#menucategory-page .restauran-title").text(data.restaurant_name);
 	$("#menucategory-page .rating-stars").attr("data-score",data.ratings.ratings);
 	initRating();
@@ -2168,7 +2176,8 @@ function menuCategoryResult(data)
 		htm+='<ons-list>';
 		$.each( data.menu_category, function( key, val ) { 			  
 			htm+='<ons-list-item modifier="tappable" class="row" onclick="loadmenu('+
-				val.cat_id+','+val.merchant_id+');">'+val.category_name+'</ons-list-item>';
+				val.cat_id+','+val.merchant_id+');"><img style="margin: 0 auto; width: 190px;height: 190px;  display: block" src="http://fellybellyapp.com/upload/'+val.photo+'"> <p style="text-align:center">'+val.category_name+'</p></ons-list-item>';
+			
 		});	
 		htm+='</ons-list>';
 		createElement('category-list',htm);	
@@ -3612,6 +3621,7 @@ function placeOrder()
 
 /*sliding menu*/
 ons.ready(function() {
+
 	menu.on('preopen', function() {
 		console.log("Menu page is going to open");
 
@@ -4757,7 +4767,22 @@ function getLanguageSettings()
 	var params="&client_token="+getStorage("client_token");
 	callAjax("getLanguageSettings",params);		
 }
+function listsMenu(){
+	var htm = '';
+ 		htm+= '<ons-list-item modifier="tappable" class="list-item-container list__item ons-list-item-inner list__item--tappable"  id="page">';
+		htm+='<div class ="cl1">1</div>';
+		htm +='</ons-list-item>';	
+		htm+= '<ons-list-item modifier="tappable" class="list-item-container list__item ons-list-item-inner list__item--tappable"  id="page">';
+		htm+='<div class ="cl2">2</div>';
+		htm +='</ons-list-item>';
+		htm+= '<ons-list-item modifier="tappable" class="list-item-container list__item ons-list-item-inner list__item--tappable"  id="page">';
+		htm+='<div class ="cl3">3</div>';
+		htm +='</ons-list-item>';
+		createElement('restlist',htm);
 
+	 
+	console.log(htm);
+}
 function translatePage()
 {
 	dump("TranslatePage");			
@@ -5363,7 +5388,7 @@ function imageLoaded(div_id)
 		console.log( 'image is ' + result + ' for ' + image.img.src );	    
 	});
 }
- 
+
 $( document ).on( "keyup", ".limit_char", function() {
 	var limit=$(this).data("maxl");
 	limit=parseInt(limit);	  
@@ -6873,7 +6898,7 @@ function h_25(cat,_m_id){
 		crossDomain: true,
 
 		success: function (dataa) {
- 			if(dataa.details.item){
+			if(dataa.details.item){
 
 				$.each( dataa.details.item, function( key, val ) {
 					++len
@@ -6890,7 +6915,7 @@ function h_25(cat,_m_id){
 							dziuk.push(dataa.details.merchant_info.merchant_id);                   
 							_photo.push(val.photo);                   
 							_name.push(val.item_name);    
- 							_price.push(val.prices[0].price);                   
+							_price.push(val.prices[0].price);                   
 							_merch_.push(_m_id);                   
 							_cut_.push(cat);                   
 							_item_id.push(val.item_id);       
@@ -6923,7 +6948,7 @@ function h_25(cat,_m_id){
 
 function back_to_title(){
 	var mtid=getStorage('menu_tit');
- 	cart = [] ; /*clear cart variable*/
+	cart = [] ; /*clear cart variable*/
 	removeStorage("tips_percentage");  
 	removeStorage("cc_id");  
 
@@ -6940,9 +6965,14 @@ function back_to_title(){
 	sNavigator.pushPage("menucategory.html", options);
 }
 jQuery(document).ready(function($) {
-		// instantiate the accordion
-		
-	});
+	// instantiate the accordion
+
+});
 
 
+function as(i){
+	var d = document.getElementById("checks");
+	 
+	d.innerHTML  = 	getStorage(i);
 
+} 
