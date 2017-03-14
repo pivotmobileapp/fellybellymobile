@@ -91,12 +91,12 @@
 @media screen and (max-width: 414px) {
 	.block-left{
 		width: 100%;
-		padding: 67% 6px;
+		padding: 0 6px;
 		float: left;
 		margin: 0 5px;
 		margin-top: 5px;
 		position: relative;
-		height: 47.3%;
+		min-height: 100%;
 		margin: auto;
 		margin: 5px 0px 0px 5px;
 		margin-left: 8px;
@@ -127,12 +127,12 @@
 	}
 	.block-left {
 	    width: 100%;
-    padding: 67% 3%;
+    padding: 0 3%;
     float: left;
     margin: 0 5px;
     margin-top: 5px;
     position: relative;
-    height: 47.3%;
+    min-height: 100%;
     margin: auto;
     margin: 5px 0px 0px 5px;
     margin-left: 6%;
