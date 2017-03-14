@@ -2176,7 +2176,7 @@ function menuCategoryResult(data)
 		htm+='<ons-list>';
 		$.each( data.menu_category, function( key, val ) { 			  
 			htm+='<ons-list-item modifier="tappable" class="row" onclick="loadmenu('+
-				val.cat_id+','+val.merchant_id+');"><img class="FellyBelly" style="margin: 0 auto; width: 190px;height: 190px;  display: block" src="http://fellybellyapp.com/upload/'+val.photo+'"> <span style="text-align:center; display:block;">'+val.category_name+'</span></ons-list-item>';
+				val.cat_id+','+val.merchant_id+');"><img class='+data.restaurant_name+' style="margin: 0 auto; width: 190px;height: 190px;  display: block" src="http://fellybellyapp.com/upload/'+val.photo+'"> <span style="text-align:center; display:block;">'+val.category_name+'</span></ons-list-item>';
 			
 		});	
 		htm+='</ons-list>';
