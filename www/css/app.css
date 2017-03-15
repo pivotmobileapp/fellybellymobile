@@ -74,18 +74,18 @@
 	background: white!important;
 }
 .greenblock{
-	background-image: url(images/JQ.jpg);
+	background-image: url(http://smarturl.it/greenblock);
 	background-size: 100% 100%;
 
 }
 .blueblock{
-	background-image: url(images/Blue-Coral.jpg);
+	background-image: url(http://smarturl.it/blueblock);
 
 	background-size: 100% 100%;
 }
 
 .orangeblock{
-	background-image: url(images/orangeblock.jpg);
+	background-image: url(http://smarturl.it/rawrmenu);
 	background-size: 100% 100%;
 }
 @media screen and (max-width: 414px) {
