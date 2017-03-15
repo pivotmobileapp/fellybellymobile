@@ -75,11 +75,11 @@
 }
 .greenblock{
 	background-image: url(images/JQ.jpg);
-		background-size: 100% 100%;
+	background-size: 100% 100%;
 
 }
 .blueblock{
-		background-image: url(images/Blue-Coral.jpg);
+	background-image: url(images/Blue-Coral.jpg);
 
 	background-size: 100% 100%;
 }
@@ -91,52 +91,63 @@
 @media screen and (max-width: 414px) {
 	.block-left{
 		width: 100%;
-		padding: 67% 6px;
+		padding: 0 6px;
 		float: left;
 		margin: 0 5px;
 		margin-top: 5px;
 		position: relative;
-		height: 47.3%;
 		margin: auto;
 		margin: 5px 0px 0px 5px;
 		margin-left: 8px;
 	}
 
 	.block-right {
-	width: 84%;
-	margin: auto;
-	overflow: hidden;
-	margin: 0px 9px 0px 0px;
-	margin-top: 5px;
-	float: right;
+		width: 84%;
+		margin: auto;
+		overflow: hidden;
+		margin: 0px 9px 0px 0px;
+		margin-top: 5px;
+		float: right;
+
+	}
+	.block-left:before {
+		content: '';
+		padding-bottom: 255%;
+		/* content: ""; */
+		float: left;
+	}
 
 }
+
+.FellyBelly{
+	width: 100%!important;
+	height: auto!important;
 }
-	.FellyBelly{
-		width: 100%!important;
-		height: auto!important;
-	}
 @media screen and (min-width: 414px) {
 	.block-right {
-	    width: 84%;
-    margin: auto;
-    overflow: hidden;
-    margin: 0px 4% 0px 0px!important;
-    margin-top: 5px;
-    float: right;
+		width: 84%;
+		margin: auto;
+		overflow: hidden;
+		margin: 0px 4% 0px 0px!important;
+		margin-top: 5px;
+		float: right;
 	}
 	.block-left {
-	    width: 100%;
-    padding: 67% 3%;
-    float: left;
-    margin: 0 5px;
-    margin-top: 5px;
-    position: relative;
-    height: 47.3%;
-    margin: auto;
-    margin: 5px 0px 0px 5px;
-    margin-left: 6%;
+		width: 100%;
+		padding: 0 3%;
+		float: left;
+		margin: 0 5px;
+		margin-top: 5px;
+		position: relative;
+		margin: auto;
+		margin-left: 6%;
 	}
+	.block-left:before {
+		padding-bottom: 252%;
+		content: "";
+		float: left;
+	}
+
 }
 /*.block-right{
 
