@@ -74,18 +74,18 @@
 	background: white!important;
 }
 .greenblock{
-	background-image: url(images/JQ.jpg);
-		background-size: 100% 100%;
+	background-image: url(http://smarturl.it/greenblock);
+	background-size: 100% 100%;
 
 }
 .blueblock{
-		background-image: url(images/Blue-Coral.jpg);
+	background-image: url(http://smarturl.it/blueblock);
 
 	background-size: 100% 100%;
 }
 
 .orangeblock{
-	background-image: url(images/orangeblock.jpg);
+	background-image: url(http://smarturl.it/rawrmenu);
 	background-size: 100% 100%;
 }
 @media screen and (max-width: 414px) {
@@ -96,47 +96,58 @@
 		margin: 0 5px;
 		margin-top: 5px;
 		position: relative;
-		min-height: 100%;
 		margin: auto;
 		margin: 5px 0px 0px 5px;
 		margin-left: 8px;
 	}
 
 	.block-right {
-	width: 84%;
-	margin: auto;
-	overflow: hidden;
-	margin: 0px 9px 0px 0px;
-	margin-top: 5px;
-	float: right;
+		width: 84%;
+		margin: auto;
+		overflow: hidden;
+		margin: 0px 9px 0px 0px;
+		margin-top: 5px;
+		float: right;
+
+	}
+	.block-left:before {
+		content: '';
+		padding-bottom: 255%;
+		/* content: ""; */
+		float: left;
+	}
 
 }
+
+.FellyBelly{
+	width: 100%!important;
+	height: auto!important;
 }
-	.FellyBelly{
-		width: 100%!important;
-		height: auto!important;
-	}
 @media screen and (min-width: 414px) {
 	.block-right {
-	    width: 84%;
-    margin: auto;
-    overflow: hidden;
-    margin: 0px 4% 0px 0px!important;
-    margin-top: 5px;
-    float: right;
+		width: 84%;
+		margin: auto;
+		overflow: hidden;
+		margin: 0px 4% 0px 0px!important;
+		margin-top: 5px;
+		float: right;
 	}
 	.block-left {
-	    width: 100%;
-    padding: 0 3%;
-    float: left;
-    margin: 0 5px;
-    margin-top: 5px;
-    position: relative;
-    min-height: 100%;
-    margin: auto;
-    margin: 5px 0px 0px 5px;
-    margin-left: 6%;
+		width: 100%;
+		padding: 0 3%;
+		float: left;
+		margin: 0 5px;
+		margin-top: 5px;
+		position: relative;
+		margin: auto;
+		margin-left: 6%;
 	}
+	.block-left:before {
+		padding-bottom: 252%;
+		content: "";
+		float: left;
+	}
+
 }
 /*.block-right{
 
@@ -312,12 +323,12 @@ margin-top: 5px;
 .icon-green,
 .myfa-check
 {
-	color:#80CC1D;
+	color:#89c30f;
 }
 
 
 .button.green-btn{
-	background:#80CC1D;
+	background:#89c30f;
 }
 
 .button.blue-btn{
@@ -348,7 +359,7 @@ margin-top: 5px;
 
 
 .tab-bar{
-	background:#80CC1D;
+	background:#89c30f;
 }
 .clear{
 	clear:both;
@@ -418,7 +429,7 @@ margin-top: 5px;
 }
 
 .results-header{
-	background:#80CC1D;
+	background:#89c30f;
 	color:#fff;
 	text-align:center;
 	padding-top:6px;
@@ -427,7 +438,7 @@ margin-top: 5px;
 	z-index:11;
 }
 
-.arrow_box { position: relative; background: #80CC1D; } .arrow_box:after { top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(0, 178, 121, 0); border-top-color: #80CC1D; border-width: 8px; margin-left: -8px; }
+.arrow_box { position: relative; background: #89c30f; } .arrow_box:after { top: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(0, 178, 121, 0); border-top-color: #89c30f; border-width: 8px; margin-left: -8px; }
 
 .modal{
 	background:rgba(255, 255, 255, 0.1);
@@ -453,7 +464,7 @@ margin-top: 5px;
 	width: 80px;
 	display:block;
 	margin:auto;
-	background:#fff;
+	background:#89c30f;
 }
 
 .logo-wrap.logo-non-auto{
@@ -552,7 +563,7 @@ address,
 .notification.open,
 .notification.pre-order
 {
-	background:#80CC1D;
+	background:#89c30f;
 }
 
 #category-list .row{
@@ -612,7 +623,7 @@ price
 }
 
 #page-itemdisplay .grey-border-bottom{
-	border-bottom:2px solid #80CC1D;
+	border-bottom:2px solid #89c30f;
 }
 #page-itemdisplay .qty{
 	width:100%;
@@ -1033,7 +1044,7 @@ price.discount,
 }
 
 .green-color{
-	color:#80CC1D;
+	color:#89c30f;
 }
 
 .pink-color{
@@ -1228,7 +1239,7 @@ price.discount,
 	top:8px;
 	width: 20px; 
 	height: 20px; 
-	background: #80CC1D; 
+	background: #89c30f; 
 	-moz-border-radius: 50px; 
 	-webkit-border-radius: 50px; 
 	border-radius: 50px;

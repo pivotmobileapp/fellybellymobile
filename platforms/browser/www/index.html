@@ -108,11 +108,16 @@
     <ons-list-item onclick="setHome();" class="bottom-menu-item" >
       <ons-icon icon="ion-ios-home-outline"></ons-icon> <span class="trn" data-trn-key="home">Home</span>
 		</ons-list-item>
-
-    <ons-list-item onclick="kUz()" class="bottom-menu-item">
+		
+		    <ons-list-item onclick="kUz()" class="bottom-menu-item">
       <ons-icon icon="ion-android-menu"></ons-icon> 
       <span class="trn" data-trn-key="browse_resto">Nearby Fellybelly</span>
 		</ons-list-item>
+		
+		  <ons-list-item onclick="menu.setMainPage('pts.html', {closeMenu: true})" class="menu-pts bottom-menu-item">
+      <ons-icon icon="ion-connection-bars"></ons-icon> 
+      <span class="trn" data-trn-key="my_points">My Points</span>
+		</ons-list-item>    
 
 	<ons-list-item onclick="showNews();" class="bottom-menu-item">
       <ons-icon icon="clipboard"></ons-icon> 
@@ -139,17 +144,10 @@
       <span class="trn" data-trn-key="address_book">Address Book</span>
 		</ons-list-item>    
 
-    <ons-list-item onclick="menu.setMainPage('pts.html', {closeMenu: true})" class="menu-pts bottom-menu-item">
-      <ons-icon icon="ion-connection-bars"></ons-icon> 
-      <span class="trn" data-trn-key="my_points">My Points</span>
-		</ons-list-item>    
-
     <ons-list-item onclick="menu.setMainPage('settings.html', {closeMenu: true})" class="bottom-menu-item">
       <ons-icon icon="ion-gear-a"></ons-icon> 
       <span class="trn" data-trn-key="settings">Settings</span>
 		</ons-list-item>    
-
-
 
 	<ons-list-item onclick="showSupport();" class="bottom-menu-item">
       <ons-icon icon="ion-settings"></ons-icon> 
@@ -274,7 +272,7 @@
 			<div class="center white"><span id="search-text" class="trn" data-trn-key="browse_resto">Request Cancel Order</span></div>
 		</ons-toolbar>
 
-		<iframe src="http://smarturl.it/RequestCancelOrder" width="100%" height="100%"></iframe>
+		<iframe src="http://smarturl.it/FellyCancelOrder" width="100%" height="100%"></iframe>
 		</ons-page>
 		</ons-navigator> 
 	</script>
@@ -316,7 +314,7 @@
 		</div>
 		</ons-toolbar>
 
-			<iframe src="http://smarturl.it/newsandpromo" width="100%" height="100%"></iframe>
+			<iframe src="http://smarturl.it/fellynewsandpromo" width="100%" height="100%"></iframe>
 
 		</ons-page>
 		</ons-navigator>
@@ -854,22 +852,22 @@
    <div class="wrapper voucher-wrap">
 
       <ons-list id="voucher-wrap">
-       <ons-list-header class="center voucher-header trn" data-trn-key="voucher">Voucher</ons-list-header>
+       <ons-list-header class="center voucher-header trn" data-trn-key="voucher">Gift Card</ons-list-header>
 
         <ons-list-item class="center apply-voucher">                 
         <input type="text" name="voucher_code"  class="voucher_code text-input text-input--underbar" 
-         placeholder="Enter Voucher here" value=""  >                
+         placeholder="Enter Gift Card here" value=""  >                
 		</ons-list-item>
 
         <ons-list-item class="center apply-voucher">
         <button class="button button--quiet green" onclick="applyVoucher();" >
-         <span class="trn" data-trn-key="apply_voucher">Apply Voucher</span>          
+         <span class="trn" data-trn-key="apply_voucher">Apply Gift Card</span>          
 		</button>  
 		</ons-list-item>
 
         <ons-list-item class="center remove-voucher">
         <button class="button button--quiet green" onclick="removeVoucher();" >
-         <span class="trn" data-trn-key="remove_voucher">Remove Voucher</span>          
+         <span class="trn" data-trn-key="remove_voucher">Remove Gift Card</span>          
 		</button>  
 		</ons-list-item>
 
@@ -2121,8 +2119,8 @@
    <ons-col width="100%">
   			<p id="checks" class="available_points"  style="font-family:Nova Square;margin: 0;margin-bottom:40px; font-size: 98px; text-align: center;color:#36BA28;"></p>
 			<p style="font-family:Nova Square; margin: 0; margin-bottom:40px; font-size: 30px; text-align: center;color:#36BA28;">POINTS</p>
-
-
+		
+		</ons-row>
     <ons-list>
        <ons-list-item modifier="chevron" class="list-item-container" onclick="detailsPTS(1);" >       
          <ons-row class="row">
