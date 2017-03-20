@@ -108,11 +108,16 @@
     <ons-list-item onclick="setHome();" class="bottom-menu-item" >
       <ons-icon icon="ion-ios-home-outline"></ons-icon> <span class="trn" data-trn-key="home">Home</span>
 		</ons-list-item>
-
-    <ons-list-item onclick="kUz()" class="bottom-menu-item">
+		
+		    <ons-list-item onclick="kUz()" class="bottom-menu-item">
       <ons-icon icon="ion-android-menu"></ons-icon> 
       <span class="trn" data-trn-key="browse_resto">Nearby Fellybelly</span>
 		</ons-list-item>
+		
+		  <ons-list-item onclick="menu.setMainPage('pts.html', {closeMenu: true})" class="menu-pts bottom-menu-item">
+      <ons-icon icon="ion-connection-bars"></ons-icon> 
+      <span class="trn" data-trn-key="my_points">My Points</span>
+		</ons-list-item>    
 
 	<ons-list-item onclick="showNews();" class="bottom-menu-item">
       <ons-icon icon="clipboard"></ons-icon> 
@@ -139,17 +144,10 @@
       <span class="trn" data-trn-key="address_book">Address Book</span>
 		</ons-list-item>    
 
-    <ons-list-item onclick="menu.setMainPage('pts.html', {closeMenu: true})" class="menu-pts bottom-menu-item">
-      <ons-icon icon="ion-connection-bars"></ons-icon> 
-      <span class="trn" data-trn-key="my_points">My Points</span>
-		</ons-list-item>    
-
     <ons-list-item onclick="menu.setMainPage('settings.html', {closeMenu: true})" class="bottom-menu-item">
       <ons-icon icon="ion-gear-a"></ons-icon> 
       <span class="trn" data-trn-key="settings">Settings</span>
 		</ons-list-item>    
-
-
 
 	<ons-list-item onclick="showSupport();" class="bottom-menu-item">
       <ons-icon icon="ion-settings"></ons-icon> 
