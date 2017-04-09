@@ -1422,10 +1422,11 @@ function callAjax(action,params)
 						setStorage('1',data.details.available_points)
 						setStorage('2',data.details.total_expenses_points)
 						setStorage('3',data.details.points_expiring)
-								console.log(data.details);
+								console.log(data);
 						$(".available_points").html( data.details.available_points );
 						$(".expenses_points").html( data.details.total_expenses_points );
 						$(".expired_points").html( data.details.points_expiring );
+						$("#checks3").html( data.details.client );
 						break;
 
 					case "detailsPTS":
@@ -4044,6 +4045,7 @@ function signup()
 
 			var params = $( "#frm-signup").serialize();	      
 			params+="&device_id="+ getStorage("device_id");
+            console.log(params)
 			callAjax("signup",params);	       
 			return false;
 		}  
